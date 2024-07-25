@@ -1,11 +1,13 @@
 'use client';
 
-import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
+import { Button } from '@/components/ui/button';
+import Card from '@/components/ui/WrapperCard';
+import { Loader2 } from 'lucide-react';
 import { updateEmail } from '@/utils/auth-helpers/server';
 import { handleRequest } from '@/utils/auth-helpers/client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { Input } from '@/components/ui/input';
 
 export default function EmailForm({
   userEmail
@@ -36,26 +38,26 @@ export default function EmailForm({
           <p className="pb-4 sm:pb-0">
             We will email you to verify the change.
           </p>
-          <Button
-            variant="slim"
-            type="submit"
-            form="emailForm"
-            loading={isSubmitting}
-          >
-            Update Email
+          <Button type="submit" form="emailForm" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Updating Email...
+              </>
+            ) : (
+              'Update Email'
+            )}
           </Button>
         </div>
       }
     >
       <div className="mt-8 mb-4 text-xl font-semibold">
         <form id="emailForm" onSubmit={(e) => handleSubmit(e)}>
-          <input
+          <Input
             type="text"
             name="newEmail"
-            className="w-1/2 p-3 rounded-md bg-zinc-800"
+            className="w-1/2 p-3"
             defaultValue={userEmail ?? ''}
-            placeholder="Your email"
-            maxLength={64}
           />
         </form>
       </div>

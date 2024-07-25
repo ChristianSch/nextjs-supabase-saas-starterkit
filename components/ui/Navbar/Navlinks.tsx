@@ -7,6 +7,7 @@ import Logo from '@/components/icons/Logo';
 import { usePathname, useRouter } from 'next/navigation';
 import { getRedirectMethod } from '@/utils/auth-helpers/settings';
 import s from './Navbar.module.css';
+import { ModeToggle } from '../mode-toggle';
 
 interface NavlinksProps {
   user?: any;
@@ -22,8 +23,11 @@ export default function Navlinks({ user }: NavlinksProps) {
           <Logo />
         </Link>
         <nav className="ml-6 space-x-2 lg:block">
-          <Link href="/" className={s.link}>
+          <Link href="/pricing" className={s.link}>
             Pricing
+          </Link>
+          <Link href="/blog" className={s.link}>
+            Blog
           </Link>
           {user && (
             <Link href="/account" className={s.link}>
@@ -46,6 +50,9 @@ export default function Navlinks({ user }: NavlinksProps) {
           </Link>
         )}
       </div>
+      <nav className="ml-4 flex items-center">
+        <ModeToggle />
+      </nav>
     </div>
   );
 }

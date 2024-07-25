@@ -1,6 +1,8 @@
 'use client';
 
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { signInWithPassword } from '@/utils/auth-helpers/server';
 import { handleRequest } from '@/utils/auth-helpers/client';
@@ -36,7 +38,7 @@ export default function PasswordSignIn({
         <div className="grid gap-2">
           <div className="grid gap-1">
             <label htmlFor="email">Email</label>
-            <input
+            <Input
               id="email"
               placeholder="name@example.com"
               type="email"
@@ -47,7 +49,7 @@ export default function PasswordSignIn({
               className="w-full p-3 rounded-md bg-zinc-800"
             />
             <label htmlFor="password">Password</label>
-            <input
+            <Input
               id="password"
               placeholder="Password"
               type="password"
@@ -56,13 +58,15 @@ export default function PasswordSignIn({
               className="w-full p-3 rounded-md bg-zinc-800"
             />
           </div>
-          <Button
-            variant="slim"
-            type="submit"
-            className="mt-1"
-            loading={isSubmitting}
-          >
-            Sign in
+          <Button type="submit" className="mt-1" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Signing in...
+              </>
+            ) : (
+              'Sign in'
+            )}
           </Button>
         </div>
       </form>

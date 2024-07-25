@@ -1,11 +1,13 @@
 'use client';
 
-import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
+import { Button } from '@/components/ui/button';
+import Card from '@/components/ui/WrapperCard';
+import { Loader2 } from 'lucide-react';
 import { updateName } from '@/utils/auth-helpers/server';
 import { handleRequest } from '@/utils/auth-helpers/client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { Input } from '@/components/ui/input';
 
 export default function NameForm({ userName }: { userName: string }) {
   const router = useRouter();
@@ -30,23 +32,25 @@ export default function NameForm({ userName }: { userName: string }) {
       footer={
         <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
           <p className="pb-4 sm:pb-0">64 characters maximum</p>
-          <Button
-            variant="slim"
-            type="submit"
-            form="nameForm"
-            loading={isSubmitting}
-          >
-            Update Name
+          <Button type="submit" form="nameForm" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Updating Name...
+              </>
+            ) : (
+              'Update Name'
+            )}
           </Button>
         </div>
       }
     >
       <div className="mt-8 mb-4 text-xl font-semibold">
         <form id="nameForm" onSubmit={(e) => handleSubmit(e)}>
-          <input
+          <Input
             type="text"
             name="fullName"
-            className="w-1/2 p-3 rounded-md bg-zinc-800"
+            className="w-1/2 p-3"
             defaultValue={userName}
             placeholder="Your name"
             maxLength={64}

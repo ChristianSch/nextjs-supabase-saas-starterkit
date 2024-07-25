@@ -1,6 +1,8 @@
 'use client';
 
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { signInWithEmail } from '@/utils/auth-helpers/server';
 import { handleRequest } from '@/utils/auth-helpers/client';
@@ -38,7 +40,7 @@ export default function EmailSignIn({
         <div className="grid gap-2">
           <div className="grid gap-1">
             <label htmlFor="email">Email</label>
-            <input
+            <Input
               id="email"
               placeholder="name@example.com"
               type="email"
@@ -50,13 +52,18 @@ export default function EmailSignIn({
             />
           </div>
           <Button
-            variant="slim"
             type="submit"
             className="mt-1"
-            loading={isSubmitting}
-            disabled={disableButton}
+            disabled={disableButton || isSubmitting}
           >
-            Sign in
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Signing in...
+              </>
+            ) : (
+              'Sign in'
+            )}
           </Button>
         </div>
       </form>

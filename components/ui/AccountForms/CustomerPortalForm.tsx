@@ -1,11 +1,12 @@
 'use client';
 
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
+import { Loader2 } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { createStripePortal } from '@/utils/stripe/server';
 import Link from 'next/link';
-import Card from '@/components/ui/Card';
+import Card from '@/components/ui/WrapperCard';
 import { Tables } from '@/types_db';
 
 type Subscription = Tables<'subscriptions'>;
@@ -55,12 +56,15 @@ export default function CustomerPortalForm({ subscription }: Props) {
       footer={
         <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
           <p className="pb-4 sm:pb-0">Manage your subscription on Stripe.</p>
-          <Button
-            variant="slim"
-            onClick={handleStripePortalRequest}
-            loading={isSubmitting}
-          >
-            Open customer portal
+          <Button onClick={handleStripePortalRequest} disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Signing in...
+              </>
+            ) : (
+              'Open customer portal'
+            )}
           </Button>
         </div>
       }
