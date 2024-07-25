@@ -3,7 +3,6 @@ import { getSortedPostsData } from '../../lib/posts';
 
 export default async function Blog() {
   const allPostsData = await getSortedPostsData();
-  console.log(allPostsData);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
