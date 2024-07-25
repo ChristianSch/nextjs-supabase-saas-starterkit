@@ -1,15 +1,15 @@
 import fs from 'fs';
 import path from 'path';
-import { join } from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'app/posts');
 
-interface PostData {
+export interface PostData {
   slug: string;
   title: string;
   date: string;
   author: string;
   description: string;
+  tags: string[];
 }
 
 export async function getSortedPostsData(): Promise<PostData[]> {

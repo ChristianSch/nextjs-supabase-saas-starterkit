@@ -1,9 +1,6 @@
 import LogoCloud from '@/components/ui/LogoCloud';
-import { createClient } from '@/utils/supabase/server';
 
 export default async function PricingPage() {
-  const supabase = createClient();
-
   return (
     <section className="container mx-auto px-4 py-16 max-w-4xl">
       <h1 className="text-4xl font-bold mb-8 text-center">
@@ -77,6 +74,15 @@ export default async function PricingPage() {
             <li>Dark mode toggle support</li>
             <li>Powered by next-themes</li>
             <li>Customizable color schemes</li>
+          </ul>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold mb-4">SEO</h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>Already includes set up metadata</li>
+            <li>Automatically generated sitemap and robots.txt</li>
+            <li>SEO optimized out of the box</li>
           </ul>
         </div>
       </div>

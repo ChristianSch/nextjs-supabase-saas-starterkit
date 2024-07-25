@@ -7,18 +7,27 @@ import { getURL } from '@/utils/helpers';
 import 'styles/main.css';
 import NextTopLoader from 'nextjs-toploader';
 import ThemeProvider from '@/providers/ThemeProvider';
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics/react';
 
+const siteName = 'Next.js Subscription Starter';
 const title = 'Next.js Subscription Starter';
 const description = 'Brought to you by Vercel, Stripe, and Supabase.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getURL()),
   title: title,
+  applicationName: siteName,
   description: description,
   openGraph: {
     title: title,
-    description: description
+    description: description,
+    url: new URL(getURL()),
+    siteName: siteName,
+    type: 'website'
+  },
+  twitter: {
+    site: '@vercel',
+    creator: '@vercel'
   }
 };
 
