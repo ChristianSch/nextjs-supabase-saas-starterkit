@@ -17,6 +17,12 @@ import ForgotPassword from '@/components/ui/AuthForms/ForgotPassword';
 import UpdatePassword from '@/components/ui/AuthForms/UpdatePassword';
 import SignUp from '@/components/ui/AuthForms/Signup';
 
+// for sitemap generation
+export async function generateStaticParams() {
+  // return all viewProp values
+  return getViewTypes().map((viewProp) => ({ id: viewProp }));
+}
+
 export default async function SignIn({
   params,
   searchParams

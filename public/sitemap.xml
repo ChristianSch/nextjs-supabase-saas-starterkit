@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/auth/callback</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/auth/reset_password</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/blog</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/pricing</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/signin</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/blog/free-saas-template</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/blog/hello-world</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/signin/email_signin</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/signin/password_signin</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/signin/forgot_password</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/signin/update_password</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://example.com/signin/signup</loc>
+    <lastmod>2024-07-26T12:26:58.889Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
