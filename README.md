@@ -13,6 +13,7 @@ Supports bun and pnpm out of the box.
 - Blog powered by Mdx and Github-flavored markdown
 - Theming (including a light and dark mode) with next-themes
 - UI powered by tailwindcss and shadcn/ui: comes batteries included
+- SEO friendly (via [metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata#usage)), automated sitemap and robots.txt generation (via [next-sitemap](https://github.com/iamvishnusankar/next-sitemap))
 
 ## Demo
 

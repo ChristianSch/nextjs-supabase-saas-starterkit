@@ -5,8 +5,8 @@ import {
   type PostData
 } from '../../../lib/posts';
 import { Metadata } from 'next';
-import { MDXContent } from 'mdx/types';
 import { ReactNode } from 'react';
+import { MDXContent } from 'mdx/types';
 
 export async function generateStaticParams() {
   const paths = await getAllPostSlugs();
@@ -49,14 +49,14 @@ export default async function Post({
 }): Promise<ReactNode> {
   const { slug } = params;
 
-  let postData: PostData;
+  let postData: PostData & { content: MDXContent };
   try {
     postData = await getPostData(slug);
   } catch (error) {
     notFound();
   }
 
-  const Mdx: MDXContent = postData.content;
+  const Mdx = postData.content;
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-8 blog-post">

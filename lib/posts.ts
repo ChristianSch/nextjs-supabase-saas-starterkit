@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { MDXContent } from 'mdx/types';
 import path from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'app/posts');
@@ -46,7 +47,7 @@ export function getAllPostSlugs(): string[] {
 
 export async function getPostData(
   slug: string
-): Promise<PostData & { content: React.ReactNode }> {
+): Promise<PostData & { content: MDXContent }> {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
 
   if (!fs.existsSync(fullPath)) {
