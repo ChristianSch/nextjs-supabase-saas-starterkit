@@ -16,6 +16,7 @@ import OauthSignIn from '@/components/ui/AuthForms/OauthSignIn';
 import ForgotPassword from '@/components/ui/AuthForms/ForgotPassword';
 import UpdatePassword from '@/components/ui/AuthForms/UpdatePassword';
 import SignUp from '@/components/ui/AuthForms/Signup';
+import ErrorMessage from '@/components/ui/ErrorMessage';
 
 // for sitemap generation
 export async function generateStaticParams() {
@@ -28,7 +29,11 @@ export default async function SignIn({
   searchParams
 }: {
   params: { id: string };
-  searchParams: { disable_button: boolean };
+  searchParams: {
+    disable_button: boolean;
+    error: string | null;
+    error_description: string | null;
+  };
 }) {
   const { allowOauth, allowEmail, allowPassword } = getAuthTypes();
   const viewTypes = getViewTypes();
@@ -62,7 +67,7 @@ export default async function SignIn({
 
   return (
     <div className="flex justify-center height-screen-helper">
-      <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
+      <div className="flex flex-col justify-between p-3 m-auto w-120 ">
         <div className="flex justify-center pb-12 ">
           <Logo width="64px" height="64px" />
         </div>
@@ -77,6 +82,10 @@ export default async function SignIn({
                   : 'Sign In'
           }
         >
+          <ErrorMessage
+            error={searchParams.error}
+            errorDescription={searchParams.error_description}
+          />
           {viewProp === 'password_signin' && (
             <PasswordSignIn
               allowEmail={allowEmail}

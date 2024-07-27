@@ -13,7 +13,7 @@ Supports bun and pnpm out of the box.
 - Blog powered by Mdx and Github-flavored markdown
 - Theming (including a light and dark mode) with next-themes
 - UI powered by tailwindcss and shadcn/ui: comes batteries included
-- SEO friendly (via [metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata#usage)), automated sitemap and robots.txt generation (via [next-sitemap](https://github.com/iamvishnusankar/next-sitemap))
+- SEO friendly (via [metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata#usage)), automated sitemap and robots.txt generation
 
 ## Demo
 
@@ -159,6 +159,8 @@ First, you will need to install [Docker](https://www.docker.com/get-started/). Y
 
 Next, run the following command to start a local Supabase instance and run the migrations to set up the database schema:
 
+(Note that supabase init is not needed in this project)
+
 ```bash
 pnpm supabase:start
 ```
@@ -173,7 +175,7 @@ You can print out these URLs at any time with the following command:
 pnpm supabase:status
 ```
 
-To link your local Supabase instance to your project, run the following command, navigate to the Supabase project you created above, and enter your database password.
+To link your local Supabase instance to your project, run the following command, navigate to the Supabase project you created above, and enter your database password. Linking is not needed for local development.
 
 ```bash
 pnpm supabase:link
