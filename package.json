@@ -40,6 +40,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
+    "loops": "^3.0.0",
     "lucide-react": "0.330.0",
     "mdx-bundler": "^10.0.2",
     "next": "14.2.3",
@@ -69,7 +70,7 @@
     "postcss": "^8.4.38",
     "prettier": "^3.3.1",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "supabase": "^1.187.3",
+    "supabase": "^1.187.8",
     "typescript": "^5.4.5"
   }
 }
