@@ -162,7 +162,7 @@ Next, run the following command to start a local Supabase instance and run the m
 (Note that supabase init is not needed in this project)
 
 ```bash
-pnpm supabase:start
+bun run supabase start
 ```
 
 The terminal output will provide you with URLs to access the different services within the Supabase stack. The Supabase Studio is where you can make changes to your local database instance.
@@ -243,7 +243,7 @@ Running this Stripe command will print a webhook secret (such as, `whsec_***`) t
 In a separate terminal, run the following command to start the development server:
 
 ```bash
-pnpm dev
+bun run dev
 ```
 
 Note that webhook forwarding and the development server must be running concurrently in two separate terminals for the application to work correctly.
